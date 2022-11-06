@@ -1,0 +1,23 @@
+h1{
+    color: rgb(181, 32, 144);
+}
+.bg-1 { 
+    background-color: #1abc9c;
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d;
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff;
+    color: #555555;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+.container-fluid tt{
+  height:60px;
+  width: 600px;;
+}

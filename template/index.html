@@ -1,0 +1,65 @@
+{% load static%}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<div class="container-fluid">
+  <ul>
+    {% if user.is_authenticated %}
+    <li><a href="logout" style="text-decoration: none;">Logout</a></li>
+    {% else %}
+    <li><a href="login" style="text-decoration: none;">Login or Signup</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+
+<div class="container-fluid align-item-center">
+  {% if user.is_authenticated %}
+  <h1> Welcom,{{user.username}}</h1>
+  <h1>  
+    This is our main Page for services
+  </h1>
+  {% else %}
+  <h1>
+    This is our main Page for services
+  </h1>
+  {% endif %}
+                    
+
+
+
+
+
+
+
+<br><br>
+<h1>Enter Tour Text Here</h1>
+<form method="POST" action="counter">
+    {% csrf_token %}
+    <textarea name="text" rows="20" cols="100">    
+    </textarea><br><br>
+    <input type="submit">
+</form><br>
+
+
+
+
+
+<div class="container-fluid bg-3 text-center">    
+    <h3>Where To Find Me?</h3><br>
+    
+    <div class="row">
+      {% for feature in features %}
+      <div class="col-sm-4">
+        <h2>{{feature.name}}</h2>
+        <p>{{feature.details}}</p>
+        <img src="birds1.jpg" alt="Image" width="350" height="300">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+ 

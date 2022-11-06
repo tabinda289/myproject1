@@ -1,0 +1,8 @@
+<h1 style="color:rgb(85, 196, 25);">Number of word in given Text is : {{amount}}</h1>
+
+
+
+{% for post in posts %}
+<h1><a href="{% url 'post' post%}">Post</a></h1>
+
+{% endfor %}
